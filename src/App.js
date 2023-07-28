@@ -1,5 +1,12 @@
 function App() {
-	return <div>Order Food</div>
+	return (
+		<div>
+			{/* <Header />
+			<MealsSummary />
+			<Meals />
+			<MealItem /> */}
+		</div>
+	)
 }
 
 export default App
