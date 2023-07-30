@@ -31,7 +31,8 @@ const MainImageWrapper = styled('div')`
 	z-index: 0;
 	overflow: hidden;
 	& > img {
-		object-fit: cover;
+		object-fit: contain;
+		width: 100%;
 	}
 `
 
@@ -44,7 +45,7 @@ const MealsSummaryContainer = styled('div')`
 	background-color: #383838;
 	color: white;
 	border-radius: 16px;
-	padding: 1rem;
+	padding: 3rem 1rem;
 	box-shadow: 0px 6px 16px 0px #0000004d;
 	margin-top: -10rem;
 	position: relative;

@@ -36,7 +36,6 @@ const StyledButton = styled('button')`
 	justify-content: space-around;
 	align-items: center;
 
-	&:active,
 	&:hover > ${Badge} {
 		background-color: #671f03;
 		animation: BUMP 300ms ease-out;
