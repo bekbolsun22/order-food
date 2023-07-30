@@ -6,7 +6,6 @@ function App() {
 		<div>
 			<Header />
 			<MealsSummary />
-
 			{/* <Header />
 			<MealsSummary />
 			<Meals />

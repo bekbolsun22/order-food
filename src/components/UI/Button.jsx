@@ -55,6 +55,7 @@ export const Button = ({
 	variant = 'contained',
 	size = 'medium',
 	IconComponent = null,
+	type = 'submit',
 	...restProps
 }) => {
 	const isHasIcon = Boolean(IconComponent)
