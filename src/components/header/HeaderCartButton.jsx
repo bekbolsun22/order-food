@@ -1,13 +1,31 @@
-import React from 'react'
+import React, { useContext, useEffect, useState } from 'react'
 import { BasketIcon } from '../../assets'
 import { styled } from 'styled-components'
+import { ModalContext } from '../../store/modal-context'
+import { CartContext } from '../../store/cart-context'
 
 export const HeaderCartButton = () => {
+	const { onOpen } = useContext(ModalContext)
+	const { addedMeals } = useContext(CartContext)
+
+	const [bump, setBump] = useState('')
+
+	const addedMealsCount = addedMeals.reduce((acc, meal) => {
+		return acc + meal.amount
+	}, 0)
+
+	useEffect(() => {
+		setBump('bump')
+		setTimeout(() => {
+			setBump('')
+		}, 300)
+	}, [addedMealsCount])
+
 	return (
-		<StyledButton>
+		<StyledButton onClick={onOpen} className={bump}>
 			<BasketIcon />
 			<span className='bump'>Your cart</span>
-			<Badge>7</Badge>
+			<Badge>{addedMealsCount}</Badge>
 		</StyledButton>
 	)
 }
@@ -35,6 +53,10 @@ const StyledButton = styled('button')`
 	display: flex;
 	justify-content: space-around;
 	align-items: center;
+
+	&.bump {
+		animation: BUMP 300ms ease-out;
+	}
 
 	&:hover > ${Badge} {
 		background-color: #671f03;

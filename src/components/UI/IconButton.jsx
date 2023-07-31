@@ -10,7 +10,7 @@ export const IconButton = ({ Icon, onClick, type = 'button', disabled }) => {
 			variant='outlined'
 			disabled={disabled}
 		>
-			{Icon && <Icon />}
+			{Icon ? <Icon /> : null}
 		</StyledButton>
 	)
 }
@@ -18,8 +18,11 @@ export const IconButton = ({ Icon, onClick, type = 'button', disabled }) => {
 const StyledButton = styled(Button)`
 	border-radius: 6px;
 	padding: 0.5rem 0.875rem;
+	display: grid;
+	place-items: center;
 	&:hover svg,
 	&:hover path {
 		fill: white;
+		stroke: white;
 	}
 `
